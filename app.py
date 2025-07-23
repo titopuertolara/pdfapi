@@ -9,14 +9,17 @@ class Employee(BaseModel):
     name: str
     email: str
     role: str
-
+class BodyWrapper(BaseModel):
+    body: Employee
+    
 app = FastAPI()
 
 
 @app.post("/generate")
-async def pdf_gen(employee: Employee):
-    print(f"Generating PDF for {employee.name}")
+async def pdf_gen(data: BodyWrapper):
     
+    employee = data.body
+    print(f"Generating PDF for {employee.name}")
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
