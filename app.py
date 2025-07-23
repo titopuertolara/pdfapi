@@ -8,7 +8,7 @@ from io import BytesIO
 class Employee(BaseModel):
     name: str
     email: str
-    position: str
+    role: str
 
 app = FastAPI()
 
@@ -24,7 +24,7 @@ async def pdf_gen(employee: Employee):
     # Add content from JSON
     pdf.cell(200, 10, txt=f"Name: {employee.name}", ln=True)
     pdf.cell(200, 10, txt=f"Email: { employee.email}", ln=True)
-    pdf.cell(200, 10, txt=f"Position: { employee.position}", ln=True)
+    pdf.cell(200, 10, txt=f"Position: { employee.role}", ln=True)
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
     pdf_stream = BytesIO(pdf_bytes)
