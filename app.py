@@ -11,6 +11,7 @@ class Employee(BaseModel):
     email: str
     role: str
     enroll_date : date
+    country: str
     
 class BodyWrapper(BaseModel):
     body: Employee
@@ -32,6 +33,7 @@ async def pdf_gen(data: BodyWrapper):
     pdf.cell(200, 10, txt=f"Email: { employee.email}", ln=True)
     pdf.cell(200, 10, txt=f"Position: { employee.role}", ln=True)
     pdf.cell(200, 10, txt=f"Enroll date: { employee.enroll_date}", ln=True)
+    pdf.cell(200, 10, txt=f"Country: { employee.country}", ln=True)
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
     pdf_stream = BytesIO(pdf_bytes)
@@ -41,7 +43,7 @@ async def pdf_gen(data: BodyWrapper):
         content=pdf_stream.getvalue(),
         media_type="application/pdf",
         headers={
-            "Content-Disposition": "attachment; filename=user_info.pdf"
+            "Content-Disposition": "attachment; filename=work_letter.pdf"
         }
     )
   
