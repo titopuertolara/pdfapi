@@ -31,7 +31,7 @@ async def pdf_gen(data: BodyWrapper):
     pdf.cell(200, 10, txt=f"Name: {employee.name}", ln=True)
     pdf.cell(200, 10, txt=f"Email: { employee.email}", ln=True)
     pdf.cell(200, 10, txt=f"Position: { employee.role}", ln=True)
-    pdf.cell(200, 10, txt=f"Enroll date: { str(employee.enroll_date)}", ln=True)
+    pdf.cell(200, 10, txt=f"Enroll date: { employee.enroll_date}", ln=True)
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
     pdf_stream = BytesIO(pdf_bytes)
