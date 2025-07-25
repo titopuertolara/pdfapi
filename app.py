@@ -4,13 +4,13 @@ from fpdf import FPDF
 from fastapi.responses import FileResponse
 import os
 from io import BytesIO
-from datetime import date
+from datetime import datetime
 
 class Employee(BaseModel):
     name: str
     email: str
     role: str
-    enroll_date : date
+    enroll_date : datetime
     
 class BodyWrapper(BaseModel):
     body: Employee
