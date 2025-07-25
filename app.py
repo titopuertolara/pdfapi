@@ -38,6 +38,8 @@ async def pdf_gen(data: BodyWrapper):
         # x=10mm from left, y=10mm from top, width=45mm (height auto-scaled)
         pdf.image(logo_path, x=10, y=10, w=45)
     pdf.set_font("Arial", size=12)
+    
+    pdf.set_y(30) 
 
     # Add current date
     pdf.cell(0, 10, txt=today_str, ln=True)
