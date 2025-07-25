@@ -24,34 +24,34 @@ async def pdf_gen(data: BodyWrapper):
     
     employee = data.body
     print(f"Generating PDF for {employee.name}")
-    today_str = date.today().strftime("%B %d, %Y")  # e.g., "July 09, 2025"
+    today_str = date.today().strftime("%B %d, %Y")  
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
 
-    # Create the PDF
+   
     pdf = FPDF(orientation='P', unit='mm', format='Letter')
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
 
-    # Add logo in top-left corner
+   
     logo_path = "logo/logo-provectus-ua.png"
     if os.path.exists(logo_path):
-        # x=10mm from left, y=10mm from top, width=45mm (height auto-scaled)
+        
         pdf.image(logo_path, x=10, y=10, w=45)
     pdf.set_font("Arial", size=12)
     
     pdf.set_y(30) 
 
-    # Add current date
+    
     pdf.cell(0, 10, txt=today_str, ln=True)
     pdf.ln(10)
 
-    # Add RE: line
+    
     pdf.set_font("Arial", 'B', size=12)
     pdf.cell(0, 10, txt=f"RE: Verification for  {employee.name}", ln=True)
     pdf.set_font("Arial", size=12)
     pdf.ln(10)
 
-    # Letter body
+    
     letter = (
         f"To Whom It May Concern,\n\n"
         f"This letter is written in the verification of the fact that {employee.name} "
@@ -70,7 +70,7 @@ async def pdf_gen(data: BodyWrapper):
     pdf_bytes = pdf.output(dest='S').encode('latin1')
     pdf_stream = BytesIO(pdf_bytes)
 
-    # Return PDF as file response
+    
     return Response(
         content=pdf_stream.getvalue(),
         media_type="application/pdf",
