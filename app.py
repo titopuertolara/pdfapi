@@ -53,7 +53,6 @@ async def pdf_gen(data: BodyWrapper):
         "company and can attest to his performance and contributions.\n\n"
         "If you have any further questions, please feel free to contact me.\n\n"
         "Yours truly,\n\n"
-        "Yuliya Volodina\n"
         "Director of People Operations, Technology and Analytics\n"
         "Provectus IT, Inc."
     )
