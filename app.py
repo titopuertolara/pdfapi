@@ -28,9 +28,15 @@ async def pdf_gen(data: BodyWrapper):
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
 
     # Create the PDF
-    pdf = FPDF()
+    pdf = FPDF(orientation='P', unit='mm', format='Letter')
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
+
+    # Add logo in top-left corner
+    logo_path = "logo/logo-provectus-ua.png"
+    if os.path.exists(logo_path):
+        # x=10mm from left, y=10mm from top, width=45mm (height auto-scaled)
+        pdf.image(logo_path, x=10, y=10, w=45)
     pdf.set_font("Arial", size=12)
 
     # Add current date
