@@ -74,7 +74,8 @@ async def pdf_gen(data: BodyWrapper):
 
     
     return Response(
-        content=pdf_stream.getvalue(),
+        #content=pdf_stream.getvalue(),
+        content=signed_pdf_bytes
         media_type="application/pdf",
         headers={
             "Content-Disposition": "attachment; filename=verification_letter.pdf"
