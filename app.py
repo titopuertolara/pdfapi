@@ -5,6 +5,7 @@ from fastapi.responses import FileResponse
 import os
 from io import BytesIO
 from datetime import date
+from sign_pdf import sign_pdf
 
 class Employee(BaseModel):
     name: str
@@ -68,7 +69,8 @@ async def pdf_gen(data: BodyWrapper):
     pdf.multi_cell(0, 10, txt=letter, align='L')
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
-    pdf_stream = BytesIO(pdf_bytes)
+    signed_pdf_bytes= sign_pdf(pdf_bytes)
+    pdf_stream = BytesIO(signed_pdf_bytes)
 
     
     return Response(
