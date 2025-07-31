@@ -5,3 +5,4 @@ pydantic
 endesive
 cryptography
 requests
+asn1crypto
