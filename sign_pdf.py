@@ -32,8 +32,6 @@ def sign_pdf(pdf):
             fp.read(), b"123456", backends.default_backend()
         )
     
-    datas = cms.sign(pdf, dct, p12[0], p12[1], p12[2], "sha256")
-    
-    signed_pdf = datas+ pdf
+    signed_pdf = cms.sign(pdf, dct, p12[0], p12[1], p12[2], "sha256")    
     
     return signed_pdf
