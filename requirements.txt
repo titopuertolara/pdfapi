@@ -4,3 +4,4 @@ fpdf
 pydantic
 endesive
 cryptography
+requests
