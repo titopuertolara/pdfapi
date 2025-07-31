@@ -3,7 +3,7 @@ import sys
 import datetime
 from cryptography.hazmat import backends
 from cryptography.hazmat.primitives.serialization import pkcs12
-
+from io import BytesIO
 from endesive.pdf import cms
 
 def sign_pdf(pdf):

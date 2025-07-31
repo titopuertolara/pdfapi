@@ -69,13 +69,13 @@ async def pdf_gen(data: BodyWrapper):
     pdf.multi_cell(0, 10, txt=letter, align='L')
 
     pdf_bytes = pdf.output(dest='S').encode('latin1')
-    signed_pdf= sign_pdf(pdf_bytes)
-    
+    signed_pdf_bytes= sign_pdf(pdf_bytes)
+    #pdf_stream = BytesIO(signed_pdf_bytes)
 
     
     return Response(
-        
-        content=signed_pdf,
+        #content=pdf_stream.getvalue(),
+        content=signed_pdf_bytes,
         media_type="application/pdf",
         headers={
             "Content-Disposition": "attachment; filename=verification_letter.pdf"
