@@ -1,10 +1,10 @@
-
 import sys
 import datetime
 from cryptography.hazmat import backends
 from cryptography.hazmat.primitives.serialization import pkcs12
 from io import BytesIO
 from endesive.pdf import cms
+
 
 def sign_pdf(pdf):
     date = datetime.datetime.utcnow()
@@ -31,12 +31,12 @@ def sign_pdf(pdf):
         p12 = pkcs12.load_key_and_certificates(
             fp.read(), b"123456", backends.default_backend()
         )
-    
+
     datas = cms.sign(pdf, dct, p12[0], p12[1], p12[2], "sha256")
-    
+
     output_buffer = BytesIO()
     output_buffer.write(pdf)
     output_buffer.write(datas)
     signed_pdf = output_buffer.getvalue()
-    
+
     return signed_pdf
