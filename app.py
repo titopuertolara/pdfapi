@@ -32,20 +32,28 @@ async def pdf_gen(data: BodyWrapper):
     print(f"Generating PDF for {employee.name}")
     today_str = date.today().strftime("%B %d, %Y")
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
+    pdf = FPDF(orientation="P", unit="mm", format="Letter")
     
     if employee.language.lower().strip() in ['english', 'spanish']:
         font_type = "Arial"
         encoding = "latin1"
+        pdf.set_font(font_type, size=12)
+        
     elif employee.language.lower().strip() == 'ukrainian':
+        
         font_type = "DejaVuSans"
         encoding = "utf-8"
+        pdf.add_font(font_type, "", "fonts/DejaVuSans.ttf", uni=True)
+        pdf.set_font(font_type, "", 12)
+        
     else:
         font_type = "Arial"
         encoding = "latin1"
         print(f"Unsupported language: {employee.language}. Defaulting to English.")
         employee.language = 'English' 
+        pdf.set_font(font_type, size=12)
 
-    pdf = FPDF(orientation="P", unit="mm", format="Letter")
+    
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
 
@@ -53,7 +61,7 @@ async def pdf_gen(data: BodyWrapper):
     if os.path.exists(logo_path):
 
         pdf.image(logo_path, x=10, y=10, w=45)
-    pdf.set_font(font_type, size=12)
+    
 
     pdf.set_y(30)
 
