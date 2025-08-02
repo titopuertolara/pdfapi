@@ -6,7 +6,7 @@ To Whom It May Concern,
 
 This letter is written to verify that {{ employee_name }} is performing services as an Independent Contractor remotely from {{ employee_country }} for Provectus IT, Inc. as a {{ employee_role }} from {{ start_date_str }} to the present.
 
-I serve as the Director of People Operations, Technology, and Analytics of the company and can attest to {{ employee_name }}’s performance and contributions.
+I serve as the Director of People Operations, Technology, and Analytics and can attest to the quality of work and contributions provided.
 
 If you have any further questions, please feel free to contact me.
 
