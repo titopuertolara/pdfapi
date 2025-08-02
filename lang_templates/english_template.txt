@@ -1,13 +1,16 @@
+{{ today_date_str }}
 
-{{today_date_str}}\n\n
-RE: Verification for  {{employee_name}}\n\n
-To Whom It May Concern,\n\n
-This letter is written in the verification of the fact that {{employee_name}}
-is performing services as an Independent Contractor remotely from {{employee_country}} for 
-Provectus IT, Inc. as a {{employee_role}} from {{start_date_str}}, up till now.\n\n
-I serve as Director of People Operations, Technology, and Analytics of the 
-company and can attest to his performance and contributions.\n\n
-If you have any further questions, please feel free to contact me.\n\n
-Yours truly,\n\n
-Director of People Operations, Technology and Analytics\n
+RE: Verification for {{ employee_name }}
+
+To Whom It May Concern,
+
+This letter is written to verify that {{ employee_name }} is performing services as an Independent Contractor remotely from {{ employee_country }} for Provectus IT, Inc. as a {{ employee_role }} from {{ start_date_str }} to the present.
+
+I serve as the Director of People Operations, Technology, and Analytics of the company and can attest to {{ employee_name }}’s performance and contributions.
+
+If you have any further questions, please feel free to contact me.
+
+Yours truly,
+
+Director of People Operations, Technology and Analytics  
 Provectus IT, Inc.
