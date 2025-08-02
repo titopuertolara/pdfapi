@@ -51,7 +51,7 @@ async def pdf_gen(data: BodyWrapper):
     elif employee.language.lower().strip() == 'ukrainian':
         
         font_type = "DejaVuSans"
-        encoding = "utf-8"
+        encoding = "latin1"
         pdf.add_font(font_type, "", "fonts/DejaVuSans.ttf", uni=True)
         pdf.set_font(font_type, "", 12)
         
