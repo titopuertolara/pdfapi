@@ -1,0 +1,12 @@
+{{today_date_str}}\n\n
+RE: Verificacion para {{employee_name}}\n\n
+A quien corresponda,\n\n
+La presente tiene como fin certificar que {{employee_name}} 
+está prestando servicios como Contratista Independiente de forma remota desde {{employee_country}} para 
+Provectus IT, Inc. en el rol de {{employee_role}} desde el {{start_date_str}} hasta la fecha.\n\n
+Me desempeño como Director de Operaciones de Personas, Tecnología y Analítica de la 
+empresa y puedo dar fe de su desempeño y contribuciones.\n\n
+Si tiene alguna pregunta adicional, no dude en ponerse en contacto conmigo.\n\n
+Atentamente,\n\n
+Director de Operaciones de Personas, Tecnología y Analítica\n
+Provectus IT, Inc.
