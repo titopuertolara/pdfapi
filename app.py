@@ -33,11 +33,20 @@ async def pdf_gen(data: BodyWrapper):
     today_str = date.today().strftime("%B %d, %Y")
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
     pdf = FPDF(orientation="P", unit="mm", format="Letter")
+    pdf.add_page()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    logo_path = "logo/logo-provectus-ua.png"
+    if os.path.exists(logo_path):
+
+        pdf.image(logo_path, x=10, y=10, w=45)
+    
+    pdf.set_y(30)
     
     if employee.language.lower().strip() in ['english', 'spanish']:
         font_type = "Arial"
         encoding = "latin1"
         pdf.set_font(font_type, size=12)
+        
         
     elif employee.language.lower().strip() == 'ukrainian':
         
@@ -51,20 +60,9 @@ async def pdf_gen(data: BodyWrapper):
         encoding = "latin1"
         print(f"Unsupported language: {employee.language}. Defaulting to English.")
         employee.language = 'English' 
-        pdf.set_font(font_type, size=12)
+        pdf.set_font(font_type, size=12)    
 
     
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=15)
-
-    logo_path = "logo/logo-provectus-ua.png"
-    if os.path.exists(logo_path):
-
-        pdf.image(logo_path, x=10, y=10, w=45)
-    
-
-    pdf.set_y(30)
-
     letter = select_template(
         employee.name, employee.country, employee.role,
         today_str, start_date_str, employee.language
