@@ -10,3 +10,4 @@ Jinja2
 langchain-aws
 langchain
 python-dotenv
+boto3
