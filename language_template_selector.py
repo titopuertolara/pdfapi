@@ -27,11 +27,11 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         )
         
         prompt_today = f"""Translate the following date from English to {language}:"
-                            Date: {today_date_str}
+                            {today_date_str}
                             Return only the translated date. Do not include any explanation or reasoning.
                         """
         prompt_enroll = f"""Translate the following date from English to {language}:"
-                            Date: {start_date_str}
+                            {start_date_str}
                             Return only the translated date. Do not include any explanation or reasoning.
                         """
         
