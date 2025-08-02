@@ -34,7 +34,7 @@ def sign_pdf(pdf):
     
     datas = cms.sign(pdf, dct, p12[0], p12[1], p12[2], "sha256")
     
-    print("cool")
+    
 
     output_buffer = BytesIO()
     output_buffer.write(pdf)
