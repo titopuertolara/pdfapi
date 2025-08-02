@@ -32,6 +32,18 @@ async def pdf_gen(data: BodyWrapper):
     print(f"Generating PDF for {employee.name}")
     today_str = date.today().strftime("%B %d, %Y")
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
+    
+    if employee.language.lower().strip() in ['english', 'spanish']:
+        font_type = "Arial"
+        encoding = "latin1"
+    elif employee.language.lower().strip() == 'ukrainian':
+        font_type = "DejaVuSans"
+        encoding = "utf-8"
+    else:
+        font_type = "Arial"
+        encoding = "latin1"
+        print(f"Unsupported language: {employee.language}. Defaulting to English.")
+        employee.language = 'English' 
 
     pdf = FPDF(orientation="P", unit="mm", format="Letter")
     pdf.add_page()
@@ -41,31 +53,10 @@ async def pdf_gen(data: BodyWrapper):
     if os.path.exists(logo_path):
 
         pdf.image(logo_path, x=10, y=10, w=45)
-    pdf.set_font("Arial", size=12)
+    pdf.set_font(font_type, size=12)
 
     pdf.set_y(30)
 
-    # pdf.cell(0, 10, txt=today_str, ln=True)
-    # pdf.ln(10)
-
-    # pdf.set_font("Arial", "B", size=12)
-    # pdf.cell(0, 10, txt=f"RE: Verification for  {employee.name}", ln=True)
-    # pdf.set_font("Arial", size=12)
-    # pdf.ln(10)
-
-    # letter = (
-    #     f"To Whom It May Concern,\n\n"
-    #     f"This letter is written in the verification of the fact that {employee.name} "
-    #     f"is performing services as an Independent Contractor remotely from {employee.country} for "
-    #     f"Provectus IT, Inc. as a {employee.role} from {start_date_str}, up till now.\n\n"
-    #     "I serve as Director of People Operations, Technology, and Analytics of the "
-    #     "company and can attest to his performance and contributions.\n\n"
-    #     "If you have any further questions, please feel free to contact me.\n\n"
-    #     "Yours truly,\n\n"
-    #     "Director of People Operations, Technology and Analytics\n"
-    #     "Provectus IT, Inc."
-    # )
-    
     letter = select_template(
         employee.name, employee.country, employee.role,
         today_str, start_date_str, employee.language
@@ -73,7 +64,7 @@ async def pdf_gen(data: BodyWrapper):
 
     pdf.multi_cell(0, 10, txt=letter, align="L")
 
-    pdf_bytes = pdf.output(dest="S").encode("latin1")
+    pdf_bytes = pdf.output(dest="S").encode(encoding)
     signed_pdf_bytes = sign_pdf(pdf_bytes)
 
     return Response(
