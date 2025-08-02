@@ -31,8 +31,10 @@ def sign_pdf(pdf):
         p12 = pkcs12.load_key_and_certificates(
             fp.read(), b"123456", backends.default_backend()
         )
-
+    
     datas = cms.sign(pdf, dct, p12[0], p12[1], p12[2], "sha256")
+    
+    print("cool")
 
     output_buffer = BytesIO()
     output_buffer.write(pdf)

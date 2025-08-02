@@ -35,6 +35,7 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
                             Return only the translated date. Do not include any explanation or reasoning.
                         """
         
+        
         today_date_str = text_llm.invoke(prompt_today).content
         start_date_str = text_llm.invoke(prompt_enroll).content
     
@@ -43,6 +44,10 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
             template_str = file.read()
     elif language.lower().strip()=='english':
         with open("lang_templates/english_template.txt", "r") as file:
+            template_str = file.read()
+    elif language.lower().strip()=='ukrainian':
+        
+        with open("lang_templates/ukrainian_template.txt", "r") as file:
             template_str = file.read()
     else:
         with open("lang_templates/english_template.txt", "r") as file:

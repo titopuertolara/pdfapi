@@ -67,11 +67,19 @@ async def pdf_gen(data: BodyWrapper):
         employee.name, employee.country, employee.role,
         today_str, start_date_str, employee.language
     )
+    
+    print(letter)
 
     pdf.multi_cell(0, 10, txt=letter, align="L")
+    
+    print("PDF content generated successfully.")
+    
 
-    pdf_bytes = pdf.output(dest="S").encode(encoding)
+    pdf_bytes = pdf.output(dest="S").encode(encoding)    
+ 
+    
     signed_pdf_bytes = sign_pdf(pdf_bytes)
+    
 
     return Response(
         content=signed_pdf_bytes,
