@@ -55,6 +55,10 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         
         with open("lang_templates/ukrainian_template.txt", "r" ) as file:
             template_str = file.read()
+    elif language.lower().strip()=='russian':
+        
+        with open("lang_templates/russian_template.txt", "r" ) as file:
+            template_str = file.read()
     else:
         with open("lang_templates/english_template.txt", "r") as file:
             template_str = file.read()
