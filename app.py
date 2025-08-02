@@ -68,8 +68,7 @@ async def pdf_gen(data: BodyWrapper):
         today_str, start_date_str, employee.language
     )
     
-    print(letter)
-
+    
     pdf.multi_cell(0, 10, txt=letter, align="L")
     
     print("PDF content generated successfully.")
