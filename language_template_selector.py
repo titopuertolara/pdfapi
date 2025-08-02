@@ -34,10 +34,16 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
                             {start_date_str}
                             Return only the translated date. Do not include any explanation or reasoning.
                         """
-        
-        
         today_date_str = text_llm.invoke(prompt_today).content
         start_date_str = text_llm.invoke(prompt_enroll).content
+                        
+        if language.lower().strip() in ['ukrainian','russian']:
+            prompt_name = f"""Translate the following name to {language}: {employee_name} Return only the translated name. Do not include any explanation or reasoning."""
+            prompt_country = f"""Translate the following country to {language}: {employee_country} Return only the translated country. Do not include any explanation or reasoning."""
+            prompt_role = f"""Translate the following role to {language}: {employee_role} Return only the translated role. Do not include any explanation or reasoning."""
+            employee_name = text_llm.invoke(prompt_name).content
+            employee_country = text_llm.invoke(prompt_country).content
+            employee_role = text_llm.invoke(prompt_role).content       
     
     if language.lower().strip()=='spanish':
         with open("lang_templates/spanish_template.txt", "r") as file:
