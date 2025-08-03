@@ -41,14 +41,9 @@ async def pdf_gen(data: BodyWrapper):
         pdf.image(logo_path, x=10, y=10, w=45)
     
     pdf.set_y(30)
-    
-    if employee.language.lower().strip() in ['english', 'spanish']:
-        font_type = "Arial"
-        encoding = "latin1"
-        pdf.set_font(font_type, size=12)
+                
         
-        
-    elif employee.language.lower().strip() in ['ukrainian','russian']:
+    if employee.language.lower().strip() in ['ukrainian','russian']:
         
         font_type = "DejaVuSans"
         encoding = "latin1"
@@ -58,8 +53,6 @@ async def pdf_gen(data: BodyWrapper):
     else:
         font_type = "Arial"
         encoding = "latin1"
-        print(f"Unsupported language: {employee.language}. Defaulting to English.")
-        employee.language = 'English' 
         pdf.set_font(font_type, size=12)    
 
     

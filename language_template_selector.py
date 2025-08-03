@@ -45,7 +45,7 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         today_date_str = text_llm.invoke(prompt_today).content
         start_date_str = text_llm.invoke(prompt_enroll).content
                         
-        if language in ['ukrainian','russian']:
+        if language not in ['english','spanish']:
             prompt_name = f"""Translate the following name to {language}: {employee_name} Return only the translated name. Do not include any explanation or reasoning."""
             prompt_country = f"""Translate the following country to {language}: {employee_country} Return only the translated country. Do not include any explanation or reasoning."""
             prompt_role = f"""Translate the following role to {language}: {employee_role} Return only the translated role. Do not include any explanation or reasoning."""
@@ -74,5 +74,5 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         start_date_str=start_date_str,
         today_date_str=today_date_str
     )
-    print(letter)                    
+                       
     return letter
