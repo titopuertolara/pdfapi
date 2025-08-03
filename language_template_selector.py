@@ -6,8 +6,16 @@ import os
 
 load_dotenv()
 
+
 def select_template(employee_name,employee_country,employee_role,today_date_str,start_date_str,language):
-    if language.lower().strip()!='english':
+    
+    template_list = os.listdir("lang_templates")
+    available_languages = [template.split('_')[0].lower() for template in template_list if template.endswith('.txt')]
+    
+    language = language.lower().strip()
+    
+    if language!='english' and language in available_languages:
+        
         REGION_NAME = os.getenv("REGION_NAME", "us-east-1")
         AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
         AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
@@ -37,7 +45,7 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         today_date_str = text_llm.invoke(prompt_today).content
         start_date_str = text_llm.invoke(prompt_enroll).content
                         
-        if language.lower().strip() in ['ukrainian','russian']:
+        if language in ['ukrainian','russian']:
             prompt_name = f"""Translate the following name to {language}: {employee_name} Return only the translated name. Do not include any explanation or reasoning."""
             prompt_country = f"""Translate the following country to {language}: {employee_country} Return only the translated country. Do not include any explanation or reasoning."""
             prompt_role = f"""Translate the following role to {language}: {employee_role} Return only the translated role. Do not include any explanation or reasoning."""
@@ -45,24 +53,18 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
             employee_country = text_llm.invoke(prompt_country).content
             employee_role = text_llm.invoke(prompt_role).content       
     
-    if language.lower().strip()=='spanish':
-        with open("lang_templates/spanish_template.txt", "r") as file:
-            template_str = file.read()
-    elif language.lower().strip()=='english':
-        with open("lang_templates/english_template.txt", "r") as file:
-            template_str = file.read()
-    elif language.lower().strip()=='ukrainian':
-        
-        with open("lang_templates/ukrainian_template.txt", "r" ) as file:
-            template_str = file.read()
-    elif language.lower().strip()=='russian':
-        
-        with open("lang_templates/russian_template.txt", "r" ) as file:
+        print(f"Using template for {language} language.")
+        with open(f"lang_templates/{language}_template.txt", "r") as file:
             template_str = file.read()
     else:
+        if language != 'english':
+            print(f"Unsupported language: {language}. Defaulting to English.")
+        else:
+            print("Using English template.")
+               
         with open("lang_templates/english_template.txt", "r") as file:
-            template_str = file.read()
-    
+            template_str = file.read()                
+        
     template = Template(template_str)
     
     letter = template.render(
@@ -72,5 +74,5 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         start_date_str=start_date_str,
         today_date_str=today_date_str
     )
-                        
+    print(letter)                    
     return letter
