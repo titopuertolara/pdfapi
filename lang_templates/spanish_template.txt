@@ -11,6 +11,7 @@ Me desempeño como Director de Operaciones de Personas, Tecnología y Analítica
 Si tiene alguna pregunta adicional, no dude en ponerse en contacto conmigo.
 
 Atentamente,
-<img src="data:image/png;base64,{{ signature_image }}" alt="Firma" width="200">
+
+
 Director de Operaciones de Personas, Tecnología y Analítica  
 Provectus IT, Inc.
