@@ -41,7 +41,7 @@ async def pdf_gen(data: BodyWrapper):
 
         pdf.image(logo_path, x=10, y=10, w=45)
     if os.path.exists(signature_image_path):
-        pdf.image(signature_image_path, x=75, y=200, w=40)
+        pdf.image(signature_image_path, x=20, y=180, w=40)
     
     pdf.set_y(30)
                 
