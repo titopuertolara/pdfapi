@@ -1,0 +1,15 @@
+{{ today_date_str }}
+
+DOTYCZY: Weryfikacja dla {{ employee_name }}
+
+Do kogo to może dotyczyć,
+
+Niniejszym potwierdzam, że {{ employee_name }} świadczy usługi jako Niezależny Wykonawca zdalnie z {{ employee_country }} dla Provectus IT, Inc. na stanowisku {{ employee_role }} od {{ start_date_str }} do chwili obecnej.
+
+Pełnię funkcję Dyrektora ds. Operacji Personalnych, Technologii i Analityki i mogę poświadczyć jakość pracy oraz wkład wniesiony przez {{ employee_name }}.
+
+W razie dodatkowych pytań, proszę o kontakt.
+
+Z poważaniem,  
+Dyrektor ds. Operacji Personalnych, Technologii i Analityki  
+Provectus IT, Inc.

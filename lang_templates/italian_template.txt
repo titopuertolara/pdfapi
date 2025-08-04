@@ -1,0 +1,16 @@
+{{ today_date_str }}
+
+OGGETTO: Verifica per {{ employee_name }}
+
+A chi di competenza,
+
+La presente è redatta per confermare che {{ employee_name }} svolge attività come Lavoratore Autonomo da remoto da {{ employee_country }} per Provectus IT, Inc., con il ruolo di {{ employee_role }}, a partire dal {{ start_date_str }} fino ad oggi.
+
+Ricopro il ruolo di Direttore delle Operazioni del Personale, Tecnologia e Analisi e posso attestare la qualità del lavoro e il contributo fornito.
+
+Per eventuali ulteriori domande, non esitate a contattarmi.
+
+Cordiali saluti,
+
+Direttore delle Operazioni del Personale, Tecnologia e Analisi  
+Provectus IT, Inc.

@@ -43,7 +43,7 @@ async def pdf_gen(data: BodyWrapper):
     pdf.set_y(30)
                 
         
-    if employee.language.lower().strip() in ['ukrainian','russian']:
+    if employee.language.lower().strip() in ['ukrainian','russian','serbian','polish','armenian','french','german','kazakh']:
         
         font_type = "DejaVuSans"
         encoding = "latin1"
@@ -64,14 +64,14 @@ async def pdf_gen(data: BodyWrapper):
     
     pdf.multi_cell(0, 10, txt=letter, align="L")
     
-    print("PDF content generated successfully.")
+    
     
 
     pdf_bytes = pdf.output(dest="S").encode(encoding)    
  
     
     signed_pdf_bytes = sign_pdf(pdf_bytes)
-    
+    print("PDF content generated successfully.")
 
     return Response(
         content=signed_pdf_bytes,

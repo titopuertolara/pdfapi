@@ -1,0 +1,16 @@
+{{ today_date_str }}
+
+BETREFF: Bestätigung für {{ employee_name }}
+
+Sehr geehrte Damen und Herren,
+
+Hiermit bestätigen wir, dass {{ employee_name }} derzeit als unabhängiger Auftragnehmer (Independent Contractor) remote aus {{ employee_country }} für Provectus IT, Inc. tätig ist. Die Tätigkeit erfolgt in der Rolle als {{ employee_role }} seit dem {{ start_date_str }} bis heute.
+
+Ich bin als Direktor für Personalwesen, Technologie und Analytik tätig und kann die Qualität der geleisteten Arbeit und den erbrachten Beitrag bestätigen.
+
+Für weitere Fragen stehe ich Ihnen gerne zur Verfügung.
+
+Mit freundlichen Grüßen
+
+Direktor für Personalwesen, Technologie und Analytik  
+Provectus IT, Inc.

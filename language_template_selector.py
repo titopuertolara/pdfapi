@@ -74,5 +74,6 @@ def select_template(employee_name,employee_country,employee_role,today_date_str,
         start_date_str=start_date_str,
         today_date_str=today_date_str
     )
+    
                        
     return letter

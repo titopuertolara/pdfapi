@@ -1,0 +1,16 @@
+{{ today_date_str }}
+
+OBJET : Vérification pour {{ employee_name }}
+
+À qui de droit,
+
+La présente atteste que {{ employee_name }} fournit des services en tant que travailleur indépendant à distance depuis {{ employee_country }} pour le compte de Provectus IT, Inc., au poste de {{ employee_role }}, depuis le {{ start_date_str }} jusqu’à aujourd’hui.
+
+J'occupe le poste de Directeur des opérations RH, de la technologie et de l’analytique, et je peux témoigner de la qualité du travail et des contributions apportées par {{ employee_name }}.
+
+Pour toute question complémentaire, n'hésitez pas à me contacter.
+
+Cordialement,
+
+Directeur des opérations RH, de la technologie et de l’analytique  
+Provectus IT, Inc.
