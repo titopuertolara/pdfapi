@@ -18,7 +18,7 @@ def sign_pdf(pdf):
         # "sigfield": "Signature1",
         # "auto_sigfield": True,
         # "sigandcertify": True,
-        "signaturebox": (470, 840, 570, 640),
+        "signaturebox":  (50, 100, 250, 150),
         "signature": "People operations",
         "signature_img": "signature.png",
         "contact": "apuertolara@provectus.com",
