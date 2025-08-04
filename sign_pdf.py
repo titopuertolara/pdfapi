@@ -20,7 +20,7 @@ def sign_pdf(pdf):
         # "sigandcertify": True,
         "signaturebox": (470, 840, 570, 640),
         "signature": "People operations",
-        "signature_img": "signature/signature.png",
+        "signature_img": "signature.png",
         "contact": "apuertolara@provectus.com",
         "location": "Bogota",
         "signingdate": date,
