@@ -11,3 +11,4 @@ langchain-aws
 langchain
 python-dotenv
 boto3
+pillow
