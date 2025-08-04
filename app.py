@@ -36,9 +36,12 @@ async def pdf_gen(data: BodyWrapper):
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
     logo_path = "logo/logo-provectus-ua.png"
+    signature_image_path = "signature_img/signature.png"
     if os.path.exists(logo_path):
 
         pdf.image(logo_path, x=10, y=10, w=45)
+    if os.path.exists(signature_image_path):
+        pdf.image(signature_image_path, x=150, y=230, w=40)
     
     pdf.set_y(30)
                 
