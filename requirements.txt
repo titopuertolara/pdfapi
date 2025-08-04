@@ -12,3 +12,4 @@ langchain
 python-dotenv
 boto3
 pillow
+attrs
