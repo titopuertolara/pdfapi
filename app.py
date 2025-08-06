@@ -46,12 +46,12 @@ async def pdf_gen(data: BodyWrapper):
 
         pdf.image(logo_path, x=10, y=10, w=45)    
     
-    y_offset = 182
+    OFFSET_VALUE = 182
     if employee.country.lower() in OFFSET_LANGS:
-        y_offset = 190   
+        OFFSET_VALUE = os.getenv("OFFSET_VALUE")   
     
     if os.path.exists(signature_image_path):
-        pdf.image(signature_image_path, x=20, y=y_offset, w=40)
+        pdf.image(signature_image_path, x=20, y=OFFSET_VALUE, w=40)
     
     pdf.set_y(30)
                 
