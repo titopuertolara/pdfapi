@@ -8,6 +8,9 @@ from datetime import date
 from sign_pdf import sign_pdf
 from language_template_selector import select_template
 
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 class Employee(BaseModel):
     name: str
@@ -32,6 +35,8 @@ async def pdf_gen(data: BodyWrapper):
     print(f"Generating PDF for {employee.name}")
     today_str = date.today().strftime("%B %d, %Y")
     start_date_str = employee.enroll_date.strftime("%B %d, %Y")
+    DEJAVU_LANGS = os.getenv("DEJAVU_LANGS").split(",")
+    OFFSET_LANGS = os.getenv("OFFSET_LANGS").split(",")
     pdf = FPDF(orientation="P", unit="mm", format="Letter")
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -39,14 +44,19 @@ async def pdf_gen(data: BodyWrapper):
     signature_image_path = "signature_img/signature.png"
     if os.path.exists(logo_path):
 
-        pdf.image(logo_path, x=10, y=10, w=45)
+        pdf.image(logo_path, x=10, y=10, w=45)    
+    
+    y_offset = 182
+    if employee.country.lower() in OFFSET_LANGS:
+        y_offset = 190   
+    
     if os.path.exists(signature_image_path):
-        pdf.image(signature_image_path, x=20, y=182, w=40)
+        pdf.image(signature_image_path, x=20, y=y_offset, w=40)
     
     pdf.set_y(30)
                 
         
-    if employee.language.lower().strip() in ['ukrainian','russian','serbian','polish','armenian','french','german','kazakh']:
+    if employee.language.lower().strip() in DEJAVU_LANGS:
         
         font_type = "DejaVuSans"
         encoding = "latin1"
