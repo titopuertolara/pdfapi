@@ -51,6 +51,7 @@ async def pdf_gen(data: BodyWrapper):
         OFFSET_VALUE = int(os.getenv("OFFSET_VALUE"))   
     
     if os.path.exists(signature_image_path):
+        print(f"Offset value for signature: {OFFSET_VALUE}")
         pdf.image(signature_image_path, x=20, y=OFFSET_VALUE, w=40)
     
     pdf.set_y(30)
