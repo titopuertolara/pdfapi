@@ -46,12 +46,10 @@ async def pdf_gen(data: BodyWrapper):
 
         pdf.image(logo_path, x=10, y=10, w=45)    
     
-    
-    if employee.country.lower() in OFFSET_LANGS:
+    OFFSET_VALUE = 182
+    if employee.language.lower() in OFFSET_LANGS:
         OFFSET_VALUE = int(os.getenv("OFFSET_VALUE"))
-    else:
-        OFFSET_VALUE = 182   
-    
+  
     if os.path.exists(signature_image_path):
         print(f"Offset value for signature: {OFFSET_VALUE}")
         pdf.image(signature_image_path, x=20, y=OFFSET_VALUE, w=40)
