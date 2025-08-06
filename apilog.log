@@ -1,0 +1,108 @@
+INFO:     Started server process [24560]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Generating PDF for Alice
+Using template for ukrainian language.
+PDF content generated successfully.
+INFO:     172.31.37.24:52362 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:58482 - "POST /generate HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     159.65.193.236:57246 - "GET /HNAP1 HTTP/1.1" 404 Not Found
+INFO:     159.65.193.236:57258 - "GET /PSIA/index HTTP/1.1" 404 Not Found
+INFO:     159.65.193.236:57264 - "POST /onvif/device_service HTTP/1.1" 404 Not Found
+Generating PDF for Esteban Puerto
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:60340 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:56810 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for serbian language.
+PDF content generated successfully.
+INFO:     172.31.37.24:55208 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Diego Martinez
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:38940 - "POST /generate HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     1.83.125.146:47424 - "GET / HTTP/1.1" 404 Not Found
+INFO:     116.172.201.46:54245 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     65.49.1.108:22610 - "GET / HTTP/1.1" 404 Not Found
+INFO:     65.49.1.108:57573 - "GET /?format=json HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     3.149.59.26:59416 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.149.59.26:47572 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     146.190.30.167:33022 - "GET / HTTP/1.1" 404 Not Found
+INFO:     146.190.30.167:33024 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+Generating PDF for Esteban Puerto
+Using English template.
+PDF content generated successfully.
+INFO:     172.31.37.24:35608 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for russian language.
+PDF content generated successfully.
+INFO:     172.31.37.24:55026 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:40942 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using template for french language.
+PDF content generated successfully.
+INFO:     172.31.37.24:41992 - "POST /generate HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.71.229.103:59398 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.71.229.103:59400 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     65.49.1.38:26722 - "GET / HTTP/1.1" 404 Not Found
+INFO:     65.49.1.46:25419 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     65.49.1.51:48307 - "GET /?format=json HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.93:33252 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.93:34384 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.93:34992 - "GET /wiki HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     45.82.78.102:47626 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+Generating PDF for Esteban Puerto
+Using template for spanish language.
+PDF content generated successfully.
+INFO:     172.31.37.24:37858 - "POST /generate HTTP/1.1" 200 OK
+Generating PDF for Esteban Puerto
+Using English template.
+PDF content generated successfully.
+INFO:     172.31.37.24:37436 - "POST /generate HTTP/1.1" 200 OK
+INFO:     167.94.138.200:43112 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.200:52204 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.200:55986 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.200:52284 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     3.134.148.59:48776 - "GET / HTTP/1.1" 404 Not Found
+INFO:     3.134.148.59:50134 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [24560]
